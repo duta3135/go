@@ -24,15 +24,15 @@ func main() {
 	duta.x = 4
 	duta.y = 5
 	duta.z = 4
-	var leri Vector
-	leri.v = 4
-	leri.w = 5
-	leri.x = 3
-	leri.y = 5
-	leri.z = 4
-	dotProduct := Vector{duta.v, duta.w, duta.x, duta.y, duta.z}.Dot(Vector{leri.v, leri.w, leri.x, leri.y, leri.z})
+	var jespan Vector
+	jespan.v = 1
+	jespan.w = 2
+	jespan.x = 5
+	jespan.y = 2
+	jespan.z = 4
+	dotProduct := Vector{duta.v, duta.w, duta.x, duta.y, duta.z}.Dot(Vector{jespan.v, jespan.w, jespan.x, jespan.y, jespan.z})
 	amplitude1 := Vector{duta.v, duta.w, duta.x, duta.y, duta.z}.Amplitude()
-	amplitude2 := Vector{leri.v, leri.w, leri.x, leri.y, leri.z}.Amplitude()
+	amplitude2 := Vector{jespan.v, jespan.w, jespan.x, jespan.y, jespan.z}.Amplitude()
 	var cosineSim float64 = dotProduct / (amplitude1 * amplitude2)
-	fmt.Printf("kesamaan cosinus antara leri dan duta: %f", cosineSim)
+	fmt.Printf("kesamaan cosinus antara jespan dan duta: %f", cosineSim)
 }
