@@ -15,21 +15,24 @@ func (vectorA Vector) Dot(vectorB Vector) float64 {
 }
 
 func (a Vector) Amplitude() float64 {
-	return math.Sqrt(a.Dot(a))
+	return math.Sqrt(a.v*a.v + a.w*a.w + a.x*a.x + a.y*a.y + a.z*a.z)
 }
 func main() {
 	var lisia Vector
-	lisia.v = 1
-	lisia.w = 1
-	lisia.x = 1
-	lisia.y = 1
-	lisia.z = 1
+	lisia.v = 4
+	lisia.w = 4
+	lisia.x = 4
+	lisia.y = 4
+	lisia.z = 4
 	var leri Vector
 	leri.v = 5
 	leri.w = 5
 	leri.x = 5
 	leri.y = 5
 	leri.z = 5
-	cosineSim := (Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Dot(Vector{leri.v, leri.w, leri.x, leri.y, leri.z})) / (Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Amplitude() * Vector{leri.v, leri.w, leri.x, leri.y, leri.z}.Amplitude())
-	fmt.Printf("lisia and leri's cosine similarity: %f", cosineSim)
+	dotProduct := Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Dot(Vector{leri.v, leri.w, leri.x, leri.y, leri.z})
+	amplitude1 := Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Amplitude()
+	amplitude2 := Vector{leri.v, leri.w, leri.x, leri.y, leri.z}.Amplitude()
+	var cosineSim float64 = dotProduct / (amplitude1 * amplitude2)
+	fmt.Printf("cosineSim: %f", cosineSim)
 }
