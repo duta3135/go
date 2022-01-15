@@ -19,20 +19,20 @@ func (a Vector) Amplitude() float64 {
 }
 func main() {
 	var lisia Vector
-	lisia.v = 4
+	lisia.v = 2
 	lisia.w = 4
 	lisia.x = 4
-	lisia.y = 4
-	lisia.z = 4
+	lisia.y = 5
+	lisia.z = 5
 	var leri Vector
-	leri.v = 5
+	leri.v = 4
 	leri.w = 5
-	leri.x = 5
+	leri.x = 3
 	leri.y = 5
-	leri.z = 5
+	leri.z = 4
 	dotProduct := Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Dot(Vector{leri.v, leri.w, leri.x, leri.y, leri.z})
 	amplitude1 := Vector{lisia.v, lisia.w, lisia.x, lisia.y, lisia.z}.Amplitude()
 	amplitude2 := Vector{leri.v, leri.w, leri.x, leri.y, leri.z}.Amplitude()
 	var cosineSim float64 = dotProduct / (amplitude1 * amplitude2)
-	fmt.Printf("cosineSim: %f", cosineSim)
+	fmt.Printf("kesamaan cosinus antara leri dan lisia: %f", cosineSim)
 }
