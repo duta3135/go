@@ -34,5 +34,5 @@ func main() {
 	amplitude1 := Vector{duta.v, duta.w, duta.x, duta.y, duta.z}.Amplitude()
 	amplitude2 := Vector{leri.v, leri.w, leri.x, leri.y, leri.z}.Amplitude()
 	var cosineSim float64 = dotProduct / (amplitude1 * amplitude2)
-	fmt.Printf("kesamaan cosinus antara leri dan lisia: %f", cosineSim)
+	fmt.Printf("kesamaan cosinus antara leri dan duta: %f", cosineSim)
 }
